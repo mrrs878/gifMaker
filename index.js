@@ -1,7 +1,7 @@
 /*
  * @Author: mrrs878@foxmail.com
  * @Date: 2021-04-27 10:47:50
- * @LastEditTime: 2021-04-28 18:41:48
+ * @LastEditTime: 2021-04-28 19:47:07
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /gif-maker/js/index.js
@@ -90,7 +90,7 @@ function initEvents(gif, canvasElement, textElement) {
       alert("请输入要生成的文字");
       return;
     }
-    console.log(gif);
+    Elements.progressTip.innerText = "";
     const fontSize = Elements.fontSizeInput.value;
     await initCanvas(canvasElement);
     await drawText({ canvasElement, text, cb: gif.addFrame.bind(gif), fontSize });
