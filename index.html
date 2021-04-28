@@ -1,7 +1,7 @@
 <!--
- * @Author: your name
+ * @Author: mrrs878@foxmail.com
  * @Date: 2021-04-27 10:47:19
- * @LastEditTime: 2021-04-27 19:12:51
+ * @LastEditTime: 2021-04-28 19:03:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /gif-maker/index.html
@@ -12,32 +12,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>打字机动画生成</title>
   <link rel="stylesheet" href="./assets/index.css">
   <script src="./assets/FileSaver.min.js"></script>
   <script src="./assets/gif.js"></script>
 </head>
 <body>
   <main class="container">
-    <img src="./assets/point.png" style="display: none;" id="pointImg" alt="" srcset="">
     <div class="options-c">
-      <label for="width">宽度: </label>
-      <input class="input" name="width" type="number" placeholder="请输入宽度" value="900" />
-      <label for="height">高度: </label>
-      <input class="input" name="height" type="number" placeholder="请输入高度" value="400" />
-      <label for="fontSize">字体大小: </label>
-      <input class="input" name="fontSize" type="number" placeholder="字体大小" value="16" />
+      <label for="width">宽度:&emsp;</label>
+      <input class="input" disabled name="width" title="待完善" type="number" placeholder="请输入宽度" value="900" />
+      <label for="height">高度:&emsp;</label>
+      <input class="input" disabled name="height" title="待完善" type="number" placeholder="请输入高度" value="400" />
+      <label for="fontSize">字体大小:&emsp;</label>
+      <input class="input" name="fontSize" type="number" placeholder="字体大小" id="fontSize" value="24" />
       <br />
       <br />
       <label for="inputStr">
-        要生成的文字:
+        要生成的文字:&emsp;
       </label>
-      <textarea class="input-str" name="inputStr"></textarea>
+      <textarea class="input-str" cols="50" rows="10" id="text" name="inputStr">Typewriter gif &#10;new line</textarea>
       <br />
       <br />
-      <button class="btn">确定</button>
+      <div>
+        <button class="btn" id="confirmBtn">确定</button>
+        <button class="btn" id="saveAsBtn">保存图片</button>
+      </div>
     </div>
     <canvas width="900" height="400" id="typed"></canvas>
+    <div class="modal" id="renderingModal">
+      <div class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="progress-tip" id="progressTip"></div>
+    </div>
   </main>
   <script src="./index.js"></script>
 </body>
