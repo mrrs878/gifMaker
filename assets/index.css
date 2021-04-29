@@ -41,6 +41,8 @@ body {
   border-color: var(--gray);
   resize: none;
   padding: 10px;
+  font-family: sans-serif;
+  height: 250px;
 }
 .input-str:focus {
   outline: none;
